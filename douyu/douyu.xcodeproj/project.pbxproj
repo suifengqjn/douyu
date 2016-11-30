@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D477D4A1DEF138B00817ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477D491DEF138B00817ACB /* AppDelegate.swift */; };
-		1D477D4C1DEF138B00817ACB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477D4B1DEF138B00817ACB /* ViewController.swift */; };
 		1D477D4F1DEF138B00817ACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477D4D1DEF138B00817ACB /* Main.storyboard */; };
 		1D477D511DEF138B00817ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477D501DEF138B00817ACB /* Assets.xcassets */; };
 		57307E67D5E6A17B4D4F1704 /* Pods_douyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB820765B538DE3F683A52E /* Pods_douyu.framework */; };
@@ -18,7 +17,6 @@
 		10F0ECD10401EB9DF8B1135B /* Pods-douyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-douyu/Pods-douyu.debug.xcconfig"; sourceTree = "<group>"; };
 		1D477D461DEF138B00817ACB /* douyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477D491DEF138B00817ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D477D4B1DEF138B00817ACB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D477D4E1DEF138B00817ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D477D501DEF138B00817ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D477D551DEF138B00817ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,13 +57,172 @@
 		1D477D481DEF138B00817ACB /* douyu */ = {
 			isa = PBXGroup;
 			children = (
+				1DB7BD741DEF22460051FDD0 /* Classes */,
 				1D477D491DEF138B00817ACB /* AppDelegate.swift */,
-				1D477D4B1DEF138B00817ACB /* ViewController.swift */,
 				1D477D4D1DEF138B00817ACB /* Main.storyboard */,
 				1D477D501DEF138B00817ACB /* Assets.xcassets */,
 				1D477D551DEF138B00817ACB /* Info.plist */,
 			);
 			path = douyu;
+			sourceTree = "<group>";
+		};
+		1DB7BD741DEF22460051FDD0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD751DEF22460051FDD0 /* Follow */,
+				1DB7BD771DEF22460051FDD0 /* Home */,
+				1DB7BD7C1DEF22460051FDD0 /* Live */,
+				1DB7BD7E1DEF22460051FDD0 /* Main */,
+				1DB7BD831DEF22460051FDD0 /* Profile */,
+				1DB7BD851DEF22460051FDD0 /* Room */,
+				1DB7BD871DEF22460051FDD0 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1DB7BD751DEF22460051FDD0 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD761DEF22460051FDD0 /* Controller */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		1DB7BD761DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD771DEF22460051FDD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD781DEF22460051FDD0 /* Controller */,
+				1DB7BD791DEF22460051FDD0 /* Model */,
+				1DB7BD7A1DEF22460051FDD0 /* View */,
+				1DB7BD7B1DEF22460051FDD0 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1DB7BD781DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD791DEF22460051FDD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DB7BD7A1DEF22460051FDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DB7BD7B1DEF22460051FDD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DB7BD7C1DEF22460051FDD0 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD7D1DEF22460051FDD0 /* Controller */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		1DB7BD7D1DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD7E1DEF22460051FDD0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD7F1DEF22460051FDD0 /* Controller */,
+				1DB7BD801DEF22460051FDD0 /* Model */,
+				1DB7BD811DEF22460051FDD0 /* View */,
+				1DB7BD821DEF22460051FDD0 /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1DB7BD7F1DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD801DEF22460051FDD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DB7BD811DEF22460051FDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DB7BD821DEF22460051FDD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DB7BD831DEF22460051FDD0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD841DEF22460051FDD0 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1DB7BD841DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD851DEF22460051FDD0 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7BD861DEF22460051FDD0 /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		1DB7BD861DEF22460051FDD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DB7BD871DEF22460051FDD0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		2DF9A74CFE0B1D073A67C295 /* Pods */ = {
@@ -208,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D477D4C1DEF138B00817ACB /* ViewController.swift in Sources */,
 				1D477D4A1DEF138B00817ACB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +401,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -267,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -294,6 +451,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -310,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -322,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10F0ECD10401EB9DF8B1135B /* Pods-douyu.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = VN226642G5;
@@ -337,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8AF64727B7B42B2C5FE147B /* Pods-douyu.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = VN226642G5;
@@ -367,6 +527,7 @@
 				1D477D5A1DEF138B00817ACB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
