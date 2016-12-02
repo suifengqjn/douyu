@@ -38,6 +38,10 @@ extension HomeController {
         
         //右侧按钮
         
-        
+        let itemSize = CGSize(width: 40, height: 40)
+        let historyItem = UIBarButtonItem.itemCreated(imageName: "image_my_history", highLightImageName: "Image_my_history_click", size: itemSize)
+        let searchItem = UIBarButtonItem.itemCreated(imageName: "btn_search", highLightImageName: "btn_search_clicked", size: itemSize)
+        let qrCodeItem = UIBarButtonItem.itemCreated(imageName: "Image_scan", highLightImageName: "Image_scan_click", size: itemSize)
+        self.navigationItem.rightBarButtonItems = [historyItem, searchItem, qrCodeItem]
     }
 }
