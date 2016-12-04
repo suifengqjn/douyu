@@ -16,6 +16,12 @@ class HomeController: UIViewController {
         setupUI()
     }
 
+    lazy var titleView: PagetitleView = {
+       
+        let titleView = PagetitleView(frame: CGRect(x:0, y:kNavHeight, width: Int(kScreenWidth), height:40), titles: ["推荐", "游戏", "娱乐", "趣玩"])
+        return titleView
+        
+    }()
     
 
 }
@@ -25,7 +31,12 @@ class HomeController: UIViewController {
 extension HomeController {
     
     fileprivate func setupUI() {
+        
+        automaticallyAdjustsScrollViewInsets = false
+        
         setupNavgationbar()
+        
+        setUpTitleView()
     }
     
     ///1. 设置导航栏
@@ -40,5 +51,10 @@ extension HomeController {
         let searchItem = UIBarButtonItem(imageName: "btn_search", highLightImageName: "btn_search_clicked", size: itemSize)
         let qrCodeItem = UIBarButtonItem(imageName: "Image_scan", highLightImageName: "Image_scan_click", size: itemSize)
         self.navigationItem.rightBarButtonItems = [historyItem, searchItem, qrCodeItem]
+    }
+    
+    ///2. 设置titleView
+    private func setUpTitleView() {
+        self.view.addSubview(titleView)
     }
 }
