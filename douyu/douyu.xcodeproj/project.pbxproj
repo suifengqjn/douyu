@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3FB5F21DF59EC30027F422 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FB5F11DF59EC30027F422 /* PageContentView.swift */; };
+		1D3FB5F41DF5A0A70027F422 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FB5F31DF5A0A70027F422 /* UIColor+Extension.swift */; };
 		1D477D4A1DEF138B00817ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D477D491DEF138B00817ACB /* AppDelegate.swift */; };
 		1D477D4F1DEF138B00817ACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D477D4D1DEF138B00817ACB /* Main.storyboard */; };
 		1D477D511DEF138B00817ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D477D501DEF138B00817ACB /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		10F0ECD10401EB9DF8B1135B /* Pods-douyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-douyu/Pods-douyu.debug.xcconfig"; sourceTree = "<group>"; };
+		1D3FB5F11DF59EC30027F422 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		1D3FB5F31DF5A0A70027F422 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1D477D461DEF138B00817ACB /* douyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D477D491DEF138B00817ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D477D4E1DEF138B00817ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5074DD1DF1C4130033C03B /* UIBarButtonItem+Extension.swift */,
+				1D3FB5F31DF5A0A70027F422 /* UIColor+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5074FE1DF2BD0F0033C03B /* PagetitleView.swift */,
+				1D3FB5F11DF59EC30027F422 /* PageContentView.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -409,7 +415,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3FB5F41DF5A0A70027F422 /* UIColor+Extension.swift in Sources */,
 				1D5074FD1DF2BBB50033C03B /* Common.swift in Sources */,
+				1D3FB5F21DF59EC30027F422 /* PageContentView.swift in Sources */,
 				1D5074DB1DF1BF440033C03B /* HomeController.swift in Sources */,
 				1D5074DE1DF1C4130033C03B /* UIBarButtonItem+Extension.swift in Sources */,
 				1D5074FF1DF2BD0F0033C03B /* PagetitleView.swift in Sources */,

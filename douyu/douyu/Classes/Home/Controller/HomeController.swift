@@ -18,9 +18,24 @@ class HomeController: UIViewController {
 
     lazy var titleView: PagetitleView = {
        
-        let titleView = PagetitleView(frame: CGRect(x:0, y:kNavHeight, width: Int(kScreenWidth), height:40), titles: ["推荐", "游戏", "娱乐", "趣玩"])
+        let titleView = PagetitleView(frame: CGRect(x:0, y:Int(kNavHeight), width: Int(kScreenWidth), height:40), titles: ["推荐", "游戏", "娱乐", "趣玩"])
         return titleView
         
+    }()
+    
+    lazy var pageContentView: PageContentView = { 
+        
+        let frame = CGRect(x: 0, y: kNavHeight + self.titleView.frame.height, width: kScreenWidth, height: kScreenHeight - kNavHeight - self.titleView.frame.height - kTabBarHeight)
+        
+        var arr:[UIViewController] = []
+        for _ in 0..<4{
+            let VC = UIViewController()
+            VC.view.backgroundColor = UIColor.randomColor()
+            arr.append(UIViewController())
+        }
+        
+       let contentView = PageContentView(frame: frame, childsVC: arr, parentVC: self)
+        return contentView
     }()
     
 
@@ -37,6 +52,8 @@ extension HomeController {
         setupNavgationbar()
         
         setUpTitleView()
+        
+        setUpContentView()
     }
     
     ///1. 设置导航栏
@@ -56,5 +73,10 @@ extension HomeController {
     ///2. 设置titleView
     private func setUpTitleView() {
         self.view.addSubview(titleView)
+    }
+    
+    ///3. 设置contentView
+    private func setUpContentView() {
+        self.view.addSubview(pageContentView)
     }
 }
