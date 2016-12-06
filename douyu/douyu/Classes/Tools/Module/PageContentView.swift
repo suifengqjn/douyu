@@ -92,11 +92,13 @@ extension PageContentView: UICollectionViewDataSource {
         // 2.1 由于循环利用, 避免循环添加, 先删除所有的子视图
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
+            
         }
         
         //let childVc = childsVC[(indexPath as NSIndexPath).item]
         let childVC = childsVC[indexPath.row]
         childVC.view.frame = cell.contentView.bounds
+        childVC.view.backgroundColor = UIColor.randomColor()
         cell.contentView.addSubview(childVC.view)
         
         return cell

@@ -13,6 +13,7 @@ class PagetitleView: UIView {
     //定义属性
     var  titles: [String]
     var titleLbabels: [UILabel] = []
+    var currentIndex:NSInteger = 0
     //定义懒加载属性
     lazy var scrollow: UIScrollView =  { [weak self] in
         
@@ -83,7 +84,8 @@ extension PagetitleView {
             titleLbabels.append(label)
             
             //给label添加点击事件
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.titleClick(ges:)))
+            label.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.titleClick(_:)))
             label.addGestureRecognizer(tap)
         }
     }
@@ -107,7 +109,19 @@ extension PagetitleView {
 
 // MARK: - label 的点击事件
 extension PagetitleView {
-    @objc func titleClick(ges:UITapGestureRecognizer) {
+    @objc fileprivate  func titleClick(_ ges:UITapGestureRecognizer) {
+        
+        //当前label
+        guard let currentLabel = ges.view as? UILabel else { return }
+        //上次的label
+        let oldLabel = titleLbabels[currentIndex]
+
+        //更换颜色
+        currentLabel.textColor = UIColor.orange
+        oldLabel.textColor = UIColor.gray
+        
+        currentIndex = currentLabel.tag;
+        
       // printf("------")
     }
 }
