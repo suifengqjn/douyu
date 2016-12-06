@@ -78,8 +78,13 @@ extension PagetitleView {
             
             let labelX:CGFloat = labelW * CGFloat(index)
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
+            //添加label到scrollow
             scrollow.addSubview(label)
             titleLbabels.append(label)
+            
+            //给label添加点击事件
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.titleClick(ges:)))
+            label.addGestureRecognizer(tap)
         }
     }
     
@@ -98,3 +103,12 @@ extension PagetitleView {
     }
     
 }
+
+
+// MARK: - label 的点击事件
+extension PagetitleView {
+    @objc func titleClick(ges:UITapGestureRecognizer) {
+      // printf("------")
+    }
+}
+
