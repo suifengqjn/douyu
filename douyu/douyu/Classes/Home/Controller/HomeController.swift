@@ -23,9 +23,9 @@ class HomeController: UIViewController {
         
     }()
     
-    lazy var pageContentView: PageContentView = { 
+    lazy var pageContentView: PageContentView = { [weak self] in
         
-        let frame = CGRect(x: 0, y: kNavHeight + self.titleView.frame.height, width: kScreenWidth, height: kScreenHeight - kNavHeight - self.titleView.frame.height - kTabBarHeight)
+        let frame = CGRect(x: 0, y: kNavHeight + (self?.titleView.frame.height)!, width: kScreenWidth, height: kScreenHeight - kNavHeight - (self?.titleView.frame.height)! - kTabBarHeight)
         
         var arr:[UIViewController] = []
         for _ in 0..<4{
@@ -34,7 +34,7 @@ class HomeController: UIViewController {
             arr.append(UIViewController())
         }
         
-       let contentView = PageContentView(frame: frame, childsVC: arr, parentVC: self)
+       let contentView = PageContentView(frame: frame, childsVC: arr, parentVC: self!)
         return contentView
     }()
     

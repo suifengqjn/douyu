@@ -18,7 +18,7 @@ protocol PageContentViewDelegate : class {
 class PageContentView: UIView {
 
     fileprivate var childsVC:[UIViewController]
-    fileprivate var parentVC:UIViewController
+    fileprivate weak var parentVC:UIViewController?
     
     weak var delegate : PageContentViewDelegate?
     
@@ -63,7 +63,7 @@ extension PageContentView {
     fileprivate func buildUI() {
     
         for childVc in self.childsVC {
-            parentVC.addChildViewController(childVc)
+            parentVC?.addChildViewController(childVc)
         }
         
         // 2.添加UICollectionView, 用于在cell中存放控制器的view
