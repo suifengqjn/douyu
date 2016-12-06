@@ -16,9 +16,10 @@ class HomeController: UIViewController {
         setupUI()
     }
 
-    lazy var titleView: PagetitleView = {
+    lazy var titleView: PagetitleView = { [weak self] in
        
         let titleView = PagetitleView(frame: CGRect(x:0, y:Int(kNavHeight), width: Int(kScreenWidth), height:40), titles: ["推荐", "游戏", "娱乐", "趣玩"])
+        titleView.delegate = self
         return titleView
         
     }()
@@ -78,5 +79,13 @@ extension HomeController {
     ///3. 设置contentView
     private func setUpContentView() {
         self.view.addSubview(pageContentView)
+    }
+}
+
+
+// MARK - PagetitleViewDelegate
+extension HomeController: PagetitleViewDelegate {
+    func pageTitleView(titleView: PagetitleView, index: NSInteger) {
+        pageContentView.setContentOffsetWithIndex(index: index)
     }
 }

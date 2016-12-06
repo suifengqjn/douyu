@@ -8,12 +8,19 @@
 
 import UIKit
 
+/// 申明代理方法
+protocol PagetitleViewDelegate: class {
+    func pageTitleView(titleView:PagetitleView, index:NSInteger)
+}
+
 class PagetitleView: UIView {
 
     //定义属性
     var  titles: [String]
     var titleLbabels: [UILabel] = []
     var currentIndex:NSInteger = 0
+    ///代理属性
+    weak var delegate:PagetitleViewDelegate?
     //定义懒加载属性
     lazy var scrollow: UIScrollView =  { [weak self] in
         
@@ -122,7 +129,15 @@ extension PagetitleView {
         
         currentIndex = currentLabel.tag;
         
-      // printf("------")
+        //更新底部线条的frame
+        let scrollowLineX = CGFloat(currentLabel.tag) * scrollowLine.frame.width
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.scrollowLine.frame.origin.x = scrollowLineX
+        })
+        
+        ///通知代理
+        delegate?.pageTitleView(titleView: self, index: currentIndex)
     }
 }
 

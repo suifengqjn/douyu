@@ -74,6 +74,14 @@ extension PageContentView {
     }
 }
 
+// mark - 提供给外界的接口
+extension PageContentView {
+    func setContentOffsetWithIndex(index: NSInteger) {
+        let offSetX = CGFloat(index) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x:offSetX, y:0), animated: true)
+    }
+}
+
 
 
 // mark - UICollectionViewDataSource
@@ -104,7 +112,6 @@ extension PageContentView: UICollectionViewDataSource {
         return cell
     }
 }
-
 
 
 
