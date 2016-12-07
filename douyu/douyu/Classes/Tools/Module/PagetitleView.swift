@@ -141,3 +141,16 @@ extension PagetitleView {
     }
 }
 
+
+// MARK - 外界方法
+extension PagetitleView {
+    func setUpContentOffsetW(progress:CGFloat, sourceIndex: Int, targetIndex: Int) {
+        let sourceLabel = titleLbabels[sourceIndex]
+        let targetLabel = titleLbabels[targetIndex]
+        
+        //处理滑块
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollowLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+    }
+}

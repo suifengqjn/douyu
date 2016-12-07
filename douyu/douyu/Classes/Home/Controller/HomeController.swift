@@ -36,6 +36,7 @@ class HomeController: UIViewController {
         }
         
        let contentView = PageContentView(frame: frame, childsVC: arr, parentVC: self!)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -87,5 +88,14 @@ extension HomeController {
 extension HomeController: PagetitleViewDelegate {
     func pageTitleView(titleView: PagetitleView, index: NSInteger) {
         pageContentView.setContentOffsetWithIndex(index: index)
+    }
+}
+
+
+// MARK - PagetitleViewDelegate
+extension HomeController: PageContentViewDelegate {
+    
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        titleView.setUpContentOffsetW(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
