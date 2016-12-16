@@ -32,7 +32,7 @@ class RecommendController: UIViewController {
         
         collView.dataSource = self
         collView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kHomeCellIden)
-         collView.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
+         collView.register( UINib(nibName: "CollectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
         //宽度，高度随父视图变化
         collView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         return collView
@@ -42,7 +42,6 @@ class RecommendController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
-        
        
     }
 
@@ -82,8 +81,7 @@ extension RecommendController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHomeHeaderIden, for: indexPath)
-        
-        headView.backgroundColor = UIColor.red
+        headView.backgroundColor = UIColor.white
         
         return headView
     }
