@@ -29,10 +29,10 @@ class RecommendController: UIViewController {
         layout.headerReferenceSize = CGSize(width: kScreenWidth, height: kHomeSectionHeaderHeight)
         
         let collView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
-        
+        collView.backgroundColor = UIColor.white
         collView.dataSource = self
-        collView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kHomeCellIden)
-         collView.register( UINib(nibName: "CollectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
+        collView.register(UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: kHomeCellIden)
+         collView.register(UINib(nibName: "CollectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
         //宽度，高度随父视图变化
         collView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         return collView
@@ -42,6 +42,8 @@ class RecommendController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
+        
+        
        
     }
 
