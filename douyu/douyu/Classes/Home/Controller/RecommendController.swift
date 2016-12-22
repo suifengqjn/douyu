@@ -11,9 +11,11 @@ import UIKit
 
 let kHomeItemMargin:CGFloat = 10
 let kHomeItemWidth: CGFloat = (kScreenWidth - 3*kHomeItemMargin)/2
-let kHomeItemHeight: CGFloat = kHomeItemWidth * 3 / 4
+let kHomeItemNormalHeight: CGFloat = kHomeItemWidth * 3 / 4
+let kHomeItemBeautyHeight: CGFloat = kHomeItemWidth * 4 / 3
 let kHomeSectionHeaderHeight:CGFloat = 50
 let kHomeCellIden = "kHomeCellIden"
+let kHomeBeautyCellIden = "kHomeBeautyCellIden"
 let kHomeHeaderIden = "kHomeHeaderIden"
 
 class RecommendController: UIViewController {
@@ -22,7 +24,7 @@ class RecommendController: UIViewController {
     lazy var collectionView:UICollectionView = { [weak self] in
        
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kHomeItemWidth, height: kHomeItemHeight)
+        layout.itemSize = CGSize(width: kHomeItemWidth, height: kHomeItemNormalHeight)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = kHomeItemMargin
         layout.sectionInset = UIEdgeInsets(top: 0, left: kHomeItemMargin, bottom: 0, right: kHomeItemMargin)
@@ -31,7 +33,9 @@ class RecommendController: UIViewController {
         let collView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collView.backgroundColor = UIColor.white
         collView.dataSource = self
+        collView.delegate = self
         collView.register(UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: kHomeCellIden)
+        collView.register(UINib(nibName: "CollectionViewBeautyCell", bundle: nil), forCellWithReuseIdentifier: kHomeBeautyCellIden)
          collView.register(UINib(nibName: "CollectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
         //宽度，高度随父视图变化
         collView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
@@ -43,8 +47,7 @@ class RecommendController: UIViewController {
         super.viewDidLoad()
         buildUI()
         
-        
-       
+
     }
 
 }
@@ -59,7 +62,7 @@ extension RecommendController {
 }
 
 
-extension RecommendController: UICollectionViewDataSource {
+extension RecommendController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 8
@@ -75,7 +78,12 @@ extension RecommendController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath)
+        var cell: UICollectionViewCell
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeBeautyCellIden, for: indexPath)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath)
+        }
         cell.contentView.backgroundColor = UIColor.randomColor()
         
         return cell
@@ -86,6 +94,13 @@ extension RecommendController: UICollectionViewDataSource {
         headView.backgroundColor = UIColor.white
         
         return headView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kHomeItemWidth, height: kHomeItemBeautyHeight)
+        }
+        return CGSize(width: kHomeItemWidth, height: kHomeItemNormalHeight)
     }
     
 }
