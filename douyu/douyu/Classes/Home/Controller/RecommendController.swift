@@ -67,7 +67,9 @@ extension RecommendController {
 extension RecommendController {
     fileprivate func loadData() {
         
-        recomVModel.requestData()
+        recomVModel.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -75,15 +77,12 @@ extension RecommendController {
 extension RecommendController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 8
+        return recomVModel.group.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        } else {
-            return 4
-        }
+        
+        return recomVModel.group[section].anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,9 +99,8 @@ extension RecommendController: UICollectionViewDataSource,UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHomeHeaderIden, for: indexPath)
-        headView.backgroundColor = UIColor.white
-        
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHomeHeaderIden, for: indexPath) as! CollectionHeader
+        headView.group = recomVModel.group[indexPath.section]
         return headView
     }
     

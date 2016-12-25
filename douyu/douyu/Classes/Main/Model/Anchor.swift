@@ -20,7 +20,8 @@ class Anchor: NSObject {
     var nickname: String = ""
     //在线人数
     var online : Int = 0
-    
+    // 主播所在城市
+    var anchor_city : String = ""
     init(dict:[String :NSObject]) {
         super.init()
         setValuesForKeys(dict)

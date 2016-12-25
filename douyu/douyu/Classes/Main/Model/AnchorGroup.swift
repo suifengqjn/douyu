@@ -23,8 +23,14 @@ class AnchorGroup: NSObject {
     }
     var tag_name : String = ""
     var icon_url : String = ""
+    var icon_name: String = ""
     //主播模型对象数组
-    private lazy var anchors: [Anchor] = [Anchor]()
+    lazy var anchors: [Anchor] = [Anchor]()
+    
+    override init() {
+        super.init()
+    }
+    
     init(dict :[String : NSObject]) {
         super.init()
         setValuesForKeys(dict)
