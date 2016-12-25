@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D222A781E0FC11700340877 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D222A771E0FC11700340877 /* RecommendViewModel.swift */; };
+		1D222A7A1E0FC34A00340877 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D222A791E0FC34A00340877 /* NSDate+Extension.swift */; };
+		1D222A7C1E0FC71700340877 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D222A7B1E0FC71700340877 /* AnchorGroup.swift */; };
+		1D222A7E1E0FCC5400340877 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D222A7D1E0FCC5400340877 /* Anchor.swift */; };
+		1D258A6F1E0FB80F00EA9014 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258A6E1E0FB80F00EA9014 /* NetWork.swift */; };
 		1D2C0C131E0668E10035273A /* CollectionViewNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C0C111E0668E10035273A /* CollectionViewNormalCell.swift */; };
 		1D2C0C141E0668E10035273A /* CollectionViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C0C121E0668E10035273A /* CollectionViewNormalCell.xib */; };
 		1D3FB5F21DF59EC30027F422 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FB5F11DF59EC30027F422 /* PageContentView.swift */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		10F0ECD10401EB9DF8B1135B /* Pods-douyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-douyu/Pods-douyu.debug.xcconfig"; sourceTree = "<group>"; };
+		1D222A771E0FC11700340877 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		1D222A791E0FC34A00340877 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		1D222A7B1E0FC71700340877 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		1D222A7D1E0FCC5400340877 /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		1D258A6E1E0FB80F00EA9014 /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 		1D2C0C111E0668E10035273A /* CollectionViewNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewNormalCell.swift; sourceTree = "<group>"; };
 		1D2C0C121E0668E10035273A /* CollectionViewNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewNormalCell.xib; sourceTree = "<group>"; };
 		1D3FB5F11DF59EC30027F422 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D258A6D1E0FB7A500EA9014 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				1D258A6E1E0FB80F00EA9014 /* NetWork.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		1D477D3D1DEF138B00817ACB = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +127,7 @@
 			children = (
 				1D5074DD1DF1C4130033C03B /* UIBarButtonItem+Extension.swift */,
 				1D3FB5F31DF5A0A70027F422 /* UIColor+Extension.swift */,
+				1D222A791E0FC34A00340877 /* NSDate+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -194,6 +213,7 @@
 		1DB7BD7B1DEF22460051FDD0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1D222A771E0FC11700340877 /* RecommendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +254,8 @@
 		1DB7BD801DEF22460051FDD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D222A7B1E0FC71700340877 /* AnchorGroup.swift */,
+				1D222A7D1E0FCC5400340877 /* Anchor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +307,7 @@
 		1DB7BD871DEF22460051FDD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1D258A6D1E0FB7A500EA9014 /* NetWork */,
 				1D5074FB1DF2BB4A0033C03B /* Module */,
 				1D5074DC1DF1C3A50033C03B /* Category */,
 				1D5074FC1DF2BBB50033C03B /* Common.swift */,
@@ -339,7 +362,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = SF;
 				TargetAttributes = {
 					1D477D451DEF138B00817ACB = {
@@ -441,15 +464,20 @@
 			files = (
 				1DE453641E0C1A2C002A5888 /* CollectionViewBeautyCell.swift in Sources */,
 				1D3FB5F41DF5A0A70027F422 /* UIColor+Extension.swift in Sources */,
+				1D222A7E1E0FCC5400340877 /* Anchor.swift in Sources */,
+				1D258A6F1E0FB80F00EA9014 /* NetWork.swift in Sources */,
 				1D5074FD1DF2BBB50033C03B /* Common.swift in Sources */,
 				1D4FD64B1DF9A041003B04FE /* RecommendController.swift in Sources */,
 				1D2C0C131E0668E10035273A /* CollectionViewNormalCell.swift in Sources */,
+				1D222A7A1E0FC34A00340877 /* NSDate+Extension.swift in Sources */,
 				1DF0CB8A1E042E0D00933227 /* CollectionHeader.swift in Sources */,
 				1D3FB5F21DF59EC30027F422 /* PageContentView.swift in Sources */,
 				1D5074DB1DF1BF440033C03B /* HomeController.swift in Sources */,
 				1D5074DE1DF1C4130033C03B /* UIBarButtonItem+Extension.swift in Sources */,
 				1D5074FF1DF2BD0F0033C03B /* PagetitleView.swift in Sources */,
+				1D222A7C1E0FC71700340877 /* AnchorGroup.swift in Sources */,
 				1D477D4A1DEF138B00817ACB /* AppDelegate.swift in Sources */,
+				1D222A781E0FC11700340877 /* RecommendViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

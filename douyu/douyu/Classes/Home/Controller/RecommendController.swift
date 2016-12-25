@@ -21,6 +21,8 @@ let kHomeHeaderIden = "kHomeHeaderIden"
 class RecommendController: UIViewController {
 
     
+    lazy var recomVModel = RecommendViewModel()
+    
     lazy var collectionView:UICollectionView = { [weak self] in
        
         let layout = UICollectionViewFlowLayout()
@@ -46,7 +48,7 @@ class RecommendController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
-        
+        loadData()
 
     }
 
@@ -58,6 +60,14 @@ extension RecommendController {
     
     fileprivate func buildUI() {
         view.addSubview(collectionView)
+    }
+}
+
+// MARK - 网络请求
+extension RecommendController {
+    fileprivate func loadData() {
+        
+        recomVModel.requestData()
     }
 }
 
