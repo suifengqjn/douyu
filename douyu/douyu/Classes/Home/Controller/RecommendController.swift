@@ -22,6 +22,12 @@ class RecommendController: UIViewController {
 
     
     lazy var recomVModel = RecommendViewModel()
+    lazy var cycleView : RecommendCycleView = {
+       
+        let cycleView = RecommendCycleView.createCycleView()
+        cycleView.frame = CGRect(x: 0, y: -cycleView.frame.height, width: kScreenWidth, height: cycleView.frame.height)
+        return cycleView
+    }()
     
     lazy var collectionView:UICollectionView = { [weak self] in
        
@@ -41,6 +47,7 @@ class RecommendController: UIViewController {
          collView.register(UINib(nibName: "CollectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHomeHeaderIden)
         //宽度，高度随父视图变化
         collView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
+        collView.contentInset = UIEdgeInsetsMake((self?.cycleView.frame.height)!, 0, 0, 0)
         return collView
         
     }()
@@ -60,6 +67,8 @@ extension RecommendController {
     
     fileprivate func buildUI() {
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        
     }
 }
 
