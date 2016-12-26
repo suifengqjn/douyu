@@ -39,33 +39,35 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="biX-1f-Bla">
                         <rect key="frame" x="0.0" y="0.0" width="163" height="131"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHa-sN-USM">
-                        <rect key="frame" x="98" y="10" width="60" height="13.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBa-fi-rMl">
+                        <rect key="frame" x="95" y="8" width="60" height="20"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="8su-DA-JYs"/>
+                            <constraint firstAttribute="width" constant="60" id="FBd-ah-rDE"/>
+                            <constraint firstAttribute="height" constant="20" id="YZE-Cy-I0k"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="1234在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="aEa-QM-KTU" secondAttribute="bottom" constant="5" id="7QR-t7-amu"/>
+                <constraint firstAttribute="trailing" secondItem="vBa-fi-rMl" secondAttribute="trailing" constant="8" id="ASG-7Z-MxV"/>
                 <constraint firstItem="aEa-QM-KTU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IsK-C8-EGZ"/>
-                <constraint firstAttribute="trailing" secondItem="qHa-sN-USM" secondAttribute="trailing" constant="5" id="OfO-XR-Uzh"/>
                 <constraint firstItem="vJI-D3-Aze" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RCW-Sg-nb5"/>
                 <constraint firstAttribute="trailing" secondItem="biX-1f-Bla" secondAttribute="trailing" id="Ugj-8m-MTn"/>
                 <constraint firstItem="biX-1f-Bla" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b7k-e8-hLS"/>
-                <constraint firstItem="qHa-sN-USM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="crT-vQ-8Ag"/>
                 <constraint firstItem="biX-1f-Bla" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hu7-R8-kuI"/>
+                <constraint firstItem="vBa-fi-rMl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="k0u-iL-T9L"/>
                 <constraint firstItem="aEa-QM-KTU" firstAttribute="top" secondItem="vJI-D3-Aze" secondAttribute="bottom" constant="5" id="owF-uJ-gT0"/>
                 <constraint firstItem="vJI-D3-Aze" firstAttribute="top" secondItem="biX-1f-Bla" secondAttribute="bottom" constant="5" id="pJm-zJ-A7E"/>
                 <constraint firstAttribute="trailing" secondItem="vJI-D3-Aze" secondAttribute="trailing" constant="10" id="u8F-Dy-meU"/>
@@ -78,10 +80,10 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="bgImageView" destination="biX-1f-Bla" id="2Nm-yJ-7g2"/>
+                <outlet property="bgImageView" destination="biX-1f-Bla" id="Yff-Ax-zlM"/>
                 <outlet property="cityLabel" destination="aEa-QM-KTU" id="XDY-zD-JhB"/>
-                <outlet property="onlineLabel" destination="qHa-sN-USM" id="P48-zU-V5K"/>
-                <outlet property="roomNameLabel" destination="vJI-D3-Aze" id="uWs-YW-AoQ"/>
+                <outlet property="onlineBtn" destination="vBa-fi-rMl" id="dVa-4V-5hB"/>
+                <outlet property="roomNameLabel" destination="vJI-D3-Aze" id="TGp-LV-QAW"/>
             </connections>
             <point key="canvasLocation" x="-2.5" y="46"/>
         </collectionViewCell>

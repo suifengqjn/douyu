@@ -8,29 +8,21 @@
 
 import UIKit
 import Kingfisher
-class CollectionViewNormalCell: UICollectionViewCell {
+class CollectionViewNormalCell: CollectionBaseCell {
 
-    @IBOutlet weak var soureImageView: UIImageView!
-    
-    
     @IBOutlet weak var nickNameLabel: UILabel!
     
-    @IBOutlet weak var roomNameLabel: UILabel!
-    
-    @IBOutlet weak var omlineBtn: UIButton!
     
     
-    public var anchor : Anchor? {
+    override var anchor: Anchor? {
+        
         didSet {
-            guard let anc = anchor else {
-                return
-            }
-            nickNameLabel.text = anc.nickname
-            omlineBtn.setTitle("\(anc.online) 在线", for: .normal)
-            roomNameLabel.text = anc.room_name
+            super.anchor = anchor
             
-            guard let icon_URL = URL(string: anc.vertical_src) else { return }
-            soureImageView.kf.setImage(with: icon_URL)
+           nickNameLabel.text = anchor?.nickname
         }
+        
     }
+    
+  
 }

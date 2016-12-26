@@ -90,16 +90,18 @@ extension RecommendController: UICollectionViewDataSource,UICollectionViewDelega
         let group = recomVModel.group[indexPath.section]
         let anchor = group.anchors[indexPath.item]
         
+        var cell : CollectionBaseCell!
         
         if indexPath.section == 1 {
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeBeautyCellIden, for: indexPath) as! CollectionViewBeautyCell
-            cell.anchor = anchor
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeBeautyCellIden, for: indexPath) as! CollectionViewBeautyCell
+            
         } else {
-           let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath) as! CollectionViewNormalCell
-            cell.anchor = anchor
-            return cell
+             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath) as! CollectionViewNormalCell
+       
         }
+        
+        cell.anchor = anchor
+        return cell
         
     }
     

@@ -67,10 +67,10 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="bgImageView" destination="7jp-oU-cCE" id="GC1-lF-21s"/>
                 <outlet property="nickNameLabel" destination="gFX-UL-Xjz" id="d4v-ae-t56"/>
-                <outlet property="omlineBtn" destination="7Yg-JT-dX0" id="BIU-EN-cZt"/>
-                <outlet property="roomNameLabel" destination="1fc-bC-6h3" id="bpP-mx-ylq"/>
-                <outlet property="soureImageView" destination="7jp-oU-cCE" id="cZy-cQ-Lhd"/>
+                <outlet property="onlineBtn" destination="7Yg-JT-dX0" id="ahC-1f-RSn"/>
+                <outlet property="roomNameLabel" destination="1fc-bC-6h3" id="dSN-vs-uuW"/>
             </connections>
         </collectionViewCell>
     </objects>
