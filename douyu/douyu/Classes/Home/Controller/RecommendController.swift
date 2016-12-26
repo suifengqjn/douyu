@@ -87,15 +87,20 @@ extension RecommendController: UICollectionViewDataSource,UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell: UICollectionViewCell
-        if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeBeautyCellIden, for: indexPath)
-        } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath)
-        }
-        cell.contentView.backgroundColor = UIColor.randomColor()
+        let group = recomVModel.group[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
         
-        return cell
+        
+        if indexPath.section == 1 {
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeBeautyCellIden, for: indexPath) as! CollectionViewBeautyCell
+            cell.anchor = anchor
+            return cell
+        } else {
+           let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHomeCellIden, for: indexPath) as! CollectionViewNormalCell
+            cell.anchor = anchor
+            return cell
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

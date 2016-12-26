@@ -66,6 +66,12 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="nickNameLabel" destination="gFX-UL-Xjz" id="d4v-ae-t56"/>
+                <outlet property="omlineBtn" destination="7Yg-JT-dX0" id="BIU-EN-cZt"/>
+                <outlet property="roomNameLabel" destination="1fc-bC-6h3" id="bpP-mx-ylq"/>
+                <outlet property="soureImageView" destination="7jp-oU-cCE" id="cZy-cQ-Lhd"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>

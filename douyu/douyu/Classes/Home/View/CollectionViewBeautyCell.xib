@@ -77,6 +77,12 @@
                     <integer key="value" value="4"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="bgImageView" destination="biX-1f-Bla" id="2Nm-yJ-7g2"/>
+                <outlet property="cityLabel" destination="aEa-QM-KTU" id="XDY-zD-JhB"/>
+                <outlet property="onlineLabel" destination="qHa-sN-USM" id="P48-zU-V5K"/>
+                <outlet property="roomNameLabel" destination="vJI-D3-Aze" id="uWs-YW-AoQ"/>
+            </connections>
             <point key="canvasLocation" x="-2.5" y="46"/>
         </collectionViewCell>
     </objects>
