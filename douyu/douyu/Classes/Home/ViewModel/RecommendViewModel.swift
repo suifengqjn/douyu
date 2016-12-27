@@ -10,6 +10,7 @@ import UIKit
 
 class RecommendViewModel {
 
+    lazy var cycleGroup: [CycleModel] = [CycleModel]()
     lazy var group: [AnchorGroup] = [AnchorGroup]()
     lazy var BigDataGroup :AnchorGroup = AnchorGroup()
     lazy var PrettyGroup:AnchorGroup = AnchorGroup()
@@ -20,6 +21,7 @@ class RecommendViewModel {
 // MARK: - 网络请求
 extension RecommendViewModel {
     
+    //瀑布流数据
     public func requestData (finishCallback: @escaping () -> ()) {
         
         var params = [String: String]()
@@ -112,6 +114,23 @@ extension RecommendViewModel {
 
     }
     
+    //轮播图数据
+    public func requestCycleData(finishCallBack: @escaping() -> ()) {
+        
+        let  param =  ["version" : "2.300"]
+        
+        NetWork.requestData(type: .GET, URLString: "http://www.douyutv.com/api/v1/slide/6", params: param) { (result) in
+            
+            guard let resultDic = result as? [String : NSObject] else { return }
+            guard let resultArr = resultDic["data"] as? [[String : NSObject]] else { return }
+            
+            for param in resultArr {
+                self.cycleGroup.append(CycleModel(dict: param))
+            }
+            finishCallBack()
+        }
+        
+    }
     
     
     

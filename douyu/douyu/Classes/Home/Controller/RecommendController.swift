@@ -79,6 +79,9 @@ extension RecommendController {
         recomVModel.requestData { 
             self.collectionView.reloadData()
         }
+        recomVModel.requestCycleData {
+            self.cycleView.cycleArr = self.recomVModel.cycleGroup
+        }
     }
 }
 
