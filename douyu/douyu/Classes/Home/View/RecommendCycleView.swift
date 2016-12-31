@@ -35,7 +35,8 @@ class RecommendCycleView: UIView {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCycleCellId)
+        
+        collectionView.register(UINib(nibName: "RecommendCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellId)
     }
     
 }
@@ -46,14 +47,25 @@ extension RecommendCycleView:UICollectionViewDataSource,UICollectionViewDelegate
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellId, for: indexPath)
+        let cycle = cycleArr?[indexPath.item]
         
-        cell.backgroundColor = UIColor.randomColor()
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellId, for: indexPath) as? RecommendCycleCell
+        
+        cell?.cycle = cycle
+        
+        return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+}
+
+
+extension RecommendCycleView:UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentIndex = Int(scrollView.contentOffset.x / kScreenWidth)
+        pageController.currentPage = currentIndex
     }
 }
 
