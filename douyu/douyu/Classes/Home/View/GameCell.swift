@@ -10,9 +10,24 @@ import UIKit
 
 class GameCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var iconImage: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var game:GameModel? {
+        didSet {
+            guard let game = game else {
+                return
+            }
+            titleLabel.text = game.tag_name
+            
+            if let url = URL(string: game.icon_url) {
+                iconImage.kf.setImage(with: url)
+            }
+            
+        }
     }
+    
 
 }

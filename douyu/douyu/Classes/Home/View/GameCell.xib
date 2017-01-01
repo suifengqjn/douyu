@@ -26,18 +26,32 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcd-6i-4Yt">
+                        <rect key="frame" x="0.0" y="89" width="80" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="09f-Gp-DYd"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="BwG-fX-GC8" firstAttribute="top" secondItem="2Vi-6B-EFl" secondAttribute="bottom" constant="5" id="72T-co-x5Z"/>
                 <constraint firstItem="2Vi-6B-EFl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="AaL-mX-3Pf"/>
+                <constraint firstAttribute="bottom" secondItem="Tcd-6i-4Yt" secondAttribute="bottom" id="Awq-7Y-XsG"/>
                 <constraint firstAttribute="bottom" secondItem="2Vi-6B-EFl" secondAttribute="bottom" constant="30" id="K4G-2U-SdJ"/>
+                <constraint firstItem="Tcd-6i-4Yt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QlH-ET-sYA"/>
                 <constraint firstAttribute="trailing" secondItem="BwG-fX-GC8" secondAttribute="trailing" id="WEw-5a-FoR"/>
                 <constraint firstItem="2Vi-6B-EFl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="esZ-mO-BGG"/>
                 <constraint firstAttribute="trailing" secondItem="2Vi-6B-EFl" secondAttribute="trailing" constant="15" id="qGC-KU-nBA"/>
+                <constraint firstAttribute="trailing" secondItem="Tcd-6i-4Yt" secondAttribute="trailing" id="s4K-F6-51g"/>
                 <constraint firstItem="BwG-fX-GC8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wyJ-3r-UzM"/>
             </constraints>
             <size key="customSize" width="86" height="113"/>
+            <connections>
+                <outlet property="iconImage" destination="2Vi-6B-EFl" id="S7W-X1-Uku"/>
+                <outlet property="titleLabel" destination="BwG-fX-GC8" id="TT7-FA-KuV"/>
+            </connections>
             <point key="canvasLocation" x="-122" y="-42"/>
         </collectionViewCell>
     </objects>

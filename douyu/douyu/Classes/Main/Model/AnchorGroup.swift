@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnchorGroup: NSObject {
+class AnchorGroup: BaseModel {
 
     // MARK:- 定义属性
     var room_list: [[String : NSObject]]? {
@@ -21,23 +21,9 @@ class AnchorGroup: NSObject {
             }
         }
     }
-    var tag_name : String = ""
-    var icon_url : String = ""
+
     var icon_name: String = ""
     //主播模型对象数组
     lazy var anchors: [Anchor] = [Anchor]()
     
-    override init() {
-        super.init()
-    }
-    
-    init(dict :[String : NSObject]) {
-        super.init()
-        setValuesForKeys(dict)
-    }
-    
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
-    }
 }

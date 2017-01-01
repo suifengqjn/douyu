@@ -17,6 +17,7 @@ private let kGameCellID = "kGameCellID"
 
 class GameController: UIViewController {
 
+    fileprivate lazy var gameModel:GameViewModel = GameViewModel()
     fileprivate lazy var collectionView: UICollectionView = { [weak self] in
        
         let layout = UICollectionViewFlowLayout()
@@ -37,7 +38,7 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
-        
+        loadData()
     }
 
 
@@ -53,18 +54,26 @@ extension GameController {
         
     }
 }
-
+// MARK: - load data
+extension GameController {
+    fileprivate func loadData() {
+        gameModel.loadGamesData { 
+            self.collectionView.reloadData()
+        }
+    }
+}
 
 // MARK: - UICollectionView
 extension GameController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30;
+        return gameModel.games.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let game = gameModel.games[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as? GameCell
-        cell?.backgroundColor = UIColor.randomColor()
+        cell?.game = game
         return cell!
     }
     
