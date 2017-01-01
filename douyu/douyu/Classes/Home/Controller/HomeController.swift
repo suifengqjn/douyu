@@ -30,9 +30,10 @@ class HomeController: UIViewController {
         
         var arr:[UIViewController] = []
         let recommendVC = RecommendController()
-        
+        let gameVC = GameController()
         arr.append(recommendVC)
-        for _ in 0..<3{
+        arr.append(gameVC)
+        for _ in 0..<2{
             let VC = UIViewController()
             VC.view.backgroundColor = UIColor.randomColor()
             arr.append(UIViewController())
