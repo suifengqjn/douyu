@@ -35,6 +35,16 @@ class GameController: UIViewController {
         
     }()
     
+    fileprivate lazy var collectionHeadTopView: CollectionHeader  = {
+        let headView = CollectionHeader.createHeadView()
+        headView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenWidth, height: kGameViewH)
+        headView.iconImage.image = UIImage(named: "Img_orange")
+        headView.titlelabel.text = "常见"
+        headView.moreBtn.isHidden = true
+        return headView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buildUI()
@@ -51,6 +61,10 @@ extension GameController {
     fileprivate func buildUI() {
         view.addSubview(collectionView)
         
+        collectionView.addSubview(collectionHeadTopView)
+        
+        
+        collectionView.contentInset = UIEdgeInsets(top: collectionHeadTopView.frame.height, left: 0, bottom: 0, right: 0)
         
     }
 }

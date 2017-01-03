@@ -50,6 +50,7 @@
             </constraints>
             <connections>
                 <outlet property="iconImage" destination="Osx-FK-7Jq" id="JdO-Xu-kNs"/>
+                <outlet property="moreBtn" destination="IvR-sX-BeC" id="P3y-RH-wRG"/>
                 <outlet property="titlelabel" destination="Dm2-H7-prv" id="EVC-Fh-QCu"/>
             </connections>
             <point key="canvasLocation" x="19" y="3"/>

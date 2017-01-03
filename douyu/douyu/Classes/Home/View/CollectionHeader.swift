@@ -15,6 +15,7 @@ class CollectionHeader: UICollectionReusableView {
     
     @IBOutlet weak var titlelabel: UILabel!
     
+    @IBOutlet weak var moreBtn: UIButton!
     public var group :  AnchorGroup? {
         didSet {
             self.iconImage.image = UIImage(named: group?.icon_name ?? "home_header_normal")
@@ -23,4 +24,11 @@ class CollectionHeader: UICollectionReusableView {
     }
     
     
+}
+
+
+extension CollectionHeader {
+    class func createHeadView() -> CollectionHeader {
+        return (Bundle.main.loadNibNamed("CollectionHeader", owner: nil, options: nil)?.first as? CollectionHeader)!
+    }
 }
